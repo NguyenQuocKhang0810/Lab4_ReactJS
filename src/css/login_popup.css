@@ -1,0 +1,78 @@
+/* Popup container */
+.login-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  animation: slideDown 0.5s ease;
+}
+
+/* Heading */
+.login-popup h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Input fields */
+.login-popup input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Error message */
+.login-popup p {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.login-popup button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-popup button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.login-popup button[type="button"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Hover effect for buttons */
+.login-popup button:hover {
+  opacity: 0.9;
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

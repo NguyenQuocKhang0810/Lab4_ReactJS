@@ -1,0 +1,101 @@
+/* General cart item styling */
+.cart-item {
+  list-style: none;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Information section for name and price */
+.cart-item-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1; /* Ensures it takes up available space between the item info and quantity */
+  gap: 10px; /* Adds spacing between name and price */
+}
+
+/* Product name styling */
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap; /* Prevents the name from breaking into multiple lines */
+}
+
+/* Price styling */
+.item-price {
+  font-size: 18px;
+  color: #27ae60;
+  white-space: nowrap; /* Ensures the price stays on one line */
+  text-align: right; /* Aligns the price to the right */
+  margin-right: 70px;
+}
+
+/* Quantity control container */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spacing between buttons and quantity */
+}
+
+/* Button styling for quantity controls */
+.quantity-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.quantity-btn.decrease {
+  background-color: #e74c3c;
+}
+
+.quantity-btn.decrease:hover {
+  background-color: #c0392b;
+}
+
+.quantity-btn.increase {
+  background-color: #2ecc71;
+}
+
+.quantity-btn.increase:hover {
+  background-color: #27ae60;
+}
+
+/* Quantity number styling */
+.item-quantity {
+  font-size: 18px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .quantity-controls {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

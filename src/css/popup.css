@@ -1,0 +1,138 @@
+/* Modal popup styling */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform-origin: center;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Title inside the popup */
+.popup h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* List styling inside the popup */
+.popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.popup ul li:last-child {
+  border-bottom: none;
+}
+
+/* Close button styling */
+.close-popup {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  align-self: flex-end;
+}
+
+.close-popup:hover {
+  background-color: #c0392b;
+}
+
+/* Cart item button styling */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item button {
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.cart-item button:hover {
+  background-color: #2980b9;
+}
+
+/* Item details styling */
+.cart-item .item-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.cart-item .item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item .item-quantity button {
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+/* Scrollbar styling */
+.popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background-color: #3498db;
+  border-radius: 10px;
+}
+
+/* Smooth popup transitions */
+.popup.fade-out {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: all 0.3s ease;
+}
