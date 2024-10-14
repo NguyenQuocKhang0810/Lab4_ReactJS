@@ -36,7 +36,7 @@ function SelectedItemsPopup({
               ))}
             </ul>
             <div className="total-amount">
-              <strong>Tổng Tiền: ${totalAmount.toFixed(2)}</strong>{" "}
+              <strong>TOTAL: ${totalAmount.toFixed(2)}</strong>{" "}
               {/* Hiển thị tổng tiền */}
             </div>
             <button className="remove-all-btn" onClick={() => setCartItems([])}>
