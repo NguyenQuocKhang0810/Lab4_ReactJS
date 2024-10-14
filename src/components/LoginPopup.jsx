@@ -56,7 +56,7 @@ const LoginPopup = ({ onClose }) => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-          />
+          /> 
           <button type="submit">Login</button>
           <button type="button" onClick={onClose}>
             Cancel

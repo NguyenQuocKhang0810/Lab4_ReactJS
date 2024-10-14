@@ -4,135 +4,172 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
-  width: 80%;
-  max-width: 500px;
+  background-color: #ffffff; /* Màu nền trắng */
+  width: 90%; /* Đặt chiều rộng tối đa là 90% */
+  max-width: 500px; /* Đặt chiều rộng tối đa là 500px */
   padding: 20px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Bóng đổ */
   z-index: 1001;
-  border-radius: 12px;
+  border-radius: 12px; /* Bo tròn góc cho popup */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-height: 80vh;
-  overflow-y: auto;
-  transition: all 0.3s ease;
+  flex-direction: column; /* Đặt chiều dọc cho các phần tử */
+  justify-content: space-between; /* Giữ khoảng cách giữa các phần tử */
+  max-height: 80vh; /* Giới hạn chiều cao tối đa */
+  overflow-y: auto; /* Cuộn nội dung nếu cần */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
   opacity: 1;
-  transform-origin: center;
-  animation: scaleUp 0.3s ease-in-out;
+  transform-origin: center; /* Điểm gốc cho hiệu ứng */
+  animation: scaleUp 0.3s ease-in-out; /* Hiệu ứng phóng to khi mở */
 }
 
 @keyframes scaleUp {
   0% {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.8); /* Giảm kích thước khi mở */
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1); /* Đặt kích thước đầy đủ khi mở */
     opacity: 1;
   }
 }
 
 /* Title inside the popup */
 .popup h3 {
-  font-size: 24px;
+  font-size: 24px; /* Kích thước chữ tiêu đề */
   text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+  color: #2c3e50; /* Màu chữ tiêu đề */
 }
 
 /* List styling inside the popup */
 .popup ul {
-  list-style: none;
+  list-style: none; /* Xóa dấu đầu dòng */
   padding: 0;
   margin: 0;
 }
 
 .popup ul li {
-  padding: 15px 0;
-  border-bottom: 1px solid #ececec;
+  padding: 15px 0; /* Khoảng cách trên và dưới */
+  border-bottom: 1px solid #ececec; /* Viền dưới cho từng mục */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  color: #333;
+  justify-content: space-between; /* Giữ khoảng cách giữa các phần tử */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  font-size: 16px; /* Kích thước chữ */
+  color: #333; /* Màu chữ */
 }
 
+/* Remove border for the last list item */
 .popup ul li:last-child {
-  border-bottom: none;
+  border-bottom: none; /* Không viền cho mục cuối cùng */
 }
 
 /* Close button styling */
 .close-popup {
-  background-color: #e74c3c;
-  color: white;
+  background-color: #e74c3c; /* Màu nền đỏ */
+  color: white; /* Màu chữ trắng */
   border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
-  align-self: flex-end;
+  padding: 12px 20px; /* Padding cho nút */
+  border-radius: 25px; /* Bo tròn góc cho nút */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  font-size: 14px; /* Kích thước chữ */
+  transition: background-color 0.2s ease; /* Hiệu ứng chuyển màu */
+  align-self: flex-end; /* Đưa nút vào bên phải */
 }
 
 .close-popup:hover {
-  background-color: #c0392b;
+  background-color: #c0392b; /* Màu khi hover */
 }
 
 /* Cart item button styling */
 .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Hiển thị theo dòng */
+  justify-content: space-between; /* Giữ khoảng cách giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 10px 0; /* Padding cho từng item */
 }
 
 .cart-item button {
-  padding: 8px 12px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
+  padding: 8px 12px; /* Padding cho nút */
+  background-color: #3498db; /* Màu nền nút */
+  color: white; /* Màu chữ nút */
+  border: none; /* Không viền */
+  border-radius: 20px; /* Bo tròn góc cho nút */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  font-size: 14px; /* Kích thước chữ */
+  transition: background-color 0.2s ease; /* Hiệu ứng chuyển màu */
 }
 
 .cart-item button:hover {
-  background-color: #2980b9;
+  background-color: #2980b9; /* Màu khi hover */
 }
 
 /* Item details styling */
 .cart-item .item-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #2c3e50;
+  font-size: 18px; /* Kích thước chữ cho tên item */
+  font-weight: bold; /* Đậm chữ */
+  color: #2c3e50; /* Màu chữ */
 }
 
 .cart-item .item-quantity {
-  display: flex;
-  align-items: center;
+  display: flex; /* Hiển thị theo dòng */
+  align-items: center; /* Căn giữa theo chiều dọc */
 }
 
 .cart-item .item-quantity button {
-  margin-left: 8px;
-  margin-right: 8px;
-  font-size: 18px;
-  padding: 5px 10px;
+  margin-left: 8px; /* Khoảng cách bên trái */
+  margin-right: 8px; /* Khoảng cách bên phải */
+  font-size: 18px; /* Kích thước chữ cho nút số lượng */
+  padding: 5px 10px; /* Padding cho nút số lượng */
+  background-color: #f0f0f0; /* Màu nền nút số lượng */
+  border: none; /* Không viền */
+  border-radius: 10px; /* Bo tròn góc cho nút */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+}
+
+.cart-item .item-quantity button:hover {
+  background-color: #dcdcdc; /* Màu khi hover cho nút số lượng */
+}
+
+/* Total amount styling */
+.total-amount {
+  font-size: 18px; /* Kích thước chữ cho tổng tiền */
+  font-weight: bold; /* Đậm chữ */
+  color: #27ae60; /* Màu chữ cho tổng tiền */
+  text-align: right; /* Canh bên phải */
+  margin-top: 20px; /* Khoảng cách trên */
+}
+
+/* Remove all button styling */
+.remove-all-btn {
+  background-color: #e74c3c; /* Màu nền cho nút xóa tất cả */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không viền */
+  border-radius: 25px; /* Bo tròn góc */
+  padding: 12px 20px; /* Padding cho nút */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  font-size: 14px; /* Kích thước chữ */
+  transition: background-color 0.2s ease; /* Hiệu ứng chuyển màu */
+  margin-top: 20px; /* Khoảng cách trên cho nút xóa tất cả */
+  align-self: flex-start; /* Đưa nút xóa vào bên trái */
+}
+
+.remove-all-btn:hover {
+  background-color: #c0392b; /* Màu khi hover cho nút xóa tất cả */
 }
 
 /* Scrollbar styling */
 .popup::-webkit-scrollbar {
-  width: 6px;
+  width: 6px; /* Chiều rộng thanh cuộn */
 }
 
 .popup::-webkit-scrollbar-thumb {
-  background-color: #3498db;
-  border-radius: 10px;
+  background-color: #3498db; /* Màu thanh cuộn */
+  border-radius: 10px; /* Bo tròn góc cho thanh cuộn */
 }
 
 /* Smooth popup transitions */
 .popup.fade-out {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.9);
-  transition: all 0.3s ease;
+  opacity: 0; /* Giảm độ mờ */
+  transform: translate(-50%, -50%) scale(0.9); /* Giảm kích thước khi đóng */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
 }

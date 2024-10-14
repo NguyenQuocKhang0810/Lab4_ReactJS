@@ -1,101 +1,128 @@
-/* General cart item styling */
+/* General styling for each cart item */
 .cart-item {
   list-style: none;
-  padding: 15px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* Màu nền trắng cho item */
+  border-radius: 12px; /* Bo tròn góc cho item */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Bóng đổ nhẹ cho item */
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* Giữ khoảng cách giữa các phần tử */
   font-size: 16px;
   color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng chuyển động cho hover */
+}
+
+.cart-item:hover {
+  transform: translateY(-4px); /* Nâng item lên một chút khi hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+/* Image styling */
+.item-image {
+  width: 80px; /* Đặt chiều rộng cho hình ảnh */
+  height: auto; /* Giữ tỷ lệ khung hình */
+  border-radius: 8px; /* Bo tròn góc cho hình ảnh */
+  margin-right: 15px; /* Khoảng cách giữa hình ảnh và thông tin sản phẩm */
+  border: 2px solid #ecf0f1; /* Viền nhẹ cho hình ảnh */
 }
 
 /* Information section for name and price */
 .cart-item-info {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1; /* Ensures it takes up available space between the item info and quantity */
-  gap: 10px; /* Adds spacing between name and price */
+  flex-direction: column; /* Đặt thông tin sản phẩm theo chiều dọc */
+  flex: 1;
 }
 
 /* Product name styling */
 .item-name {
   font-size: 18px;
   font-weight: 600;
-  color: #2c3e50;
-  white-space: nowrap; /* Prevents the name from breaking into multiple lines */
+  color: #2c3e50; /* Màu chữ sản phẩm */
+  margin-bottom: 5px; /* Khoảng cách giữa tên và giá */
 }
 
 /* Price styling */
 .item-price {
-  font-size: 18px;
-  color: #27ae60;
-  white-space: nowrap; /* Ensures the price stays on one line */
-  text-align: right; /* Aligns the price to the right */
-  margin-right: 70px;
+  font-size: 16px;
+  color: #27ae60; /* Màu chữ giá sản phẩm */
 }
 
 /* Quantity control container */
 .quantity-controls {
   display: flex;
   align-items: center;
-  gap: 10px; /* Spacing between buttons and quantity */
+  gap: 10px; /* Khoảng cách giữa các nút và số lượng */
 }
 
 /* Button styling for quantity controls */
 .quantity-btn {
-  background-color: #3498db;
+  background-color: #3498db; /* Màu nền cho nút */
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
+  border-radius: 6px; /* Bo tròn góc cho nút */
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  min-width: 35px; /* Đặt chiều rộng tối thiểu cho nút */
 }
 
 .quantity-btn:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
+  background-color: #2980b9; /* Thay đổi màu khi hover */
+  transform: scale(1.05); /* Tăng kích thước một chút khi hover */
 }
 
 .quantity-btn.decrease {
-  background-color: #e74c3c;
+  background-color: #e74c3c; /* Màu nền cho nút giảm */
 }
 
 .quantity-btn.decrease:hover {
-  background-color: #c0392b;
+  background-color: #c0392b; /* Màu khi hover cho nút giảm */
 }
 
 .quantity-btn.increase {
-  background-color: #2ecc71;
+  background-color: #2ecc71; /* Màu nền cho nút tăng */
 }
 
 .quantity-btn.increase:hover {
-  background-color: #27ae60;
+  background-color: #27ae60; /* Màu khi hover cho nút tăng */
 }
 
 /* Quantity number styling */
 .item-quantity {
   font-size: 18px;
   font-weight: bold;
-  color: #34495e;
+  color: #34495e; /* Màu chữ số lượng */
+  min-width: 30px; /* Đảm bảo số lượng có kích thước tối thiểu */
+  text-align: center; /* Canh giữa số lượng */
+}
+
+/* Remove button styling */
+.remove-btn {
+  background-color: #e74c3c; /* Màu nền cho nút xóa */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Bo tròn góc cho nút xóa */
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b; /* Màu khi hover cho nút xóa */
 }
 
 /* Responsive behavior */
 @media (max-width: 768px) {
   .cart-item {
-    flex-direction: column;
+    flex-direction: column; /* Chuyển thành chiều dọc trên màn hình nhỏ */
     align-items: flex-start;
-    gap: 10px;
   }
 
-  .quantity-controls {
-    justify-content: space-between;
-    width: 100%;
+  .item-image {
+    margin-bottom: 10px; /* Khoảng cách dưới hình ảnh */
   }
 }

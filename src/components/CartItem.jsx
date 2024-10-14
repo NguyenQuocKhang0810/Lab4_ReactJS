@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/cartitem.css";
 
-function CartItem({ item, updateQuantity }) {
+function CartItem({ item, updateQuantity, removeItem }) {
   const handleIncrease = () => {
     updateQuantity(item.id, item.quantity + 1);
   };
@@ -12,6 +12,7 @@ function CartItem({ item, updateQuantity }) {
 
   return (
     <li className="cart-item">
+      <img src={item.image} alt={item.title} className="item-image" />
       <div className="cart-item-info">
         <span className="item-name">{item.title}</span>
         <span className="item-price">
@@ -36,6 +37,9 @@ function CartItem({ item, updateQuantity }) {
         <span className="item-quantity">{item.quantity}</span>
         <button className="quantity-btn increase" onClick={handleIncrease}>
           +
+        </button>
+        <button className="remove-btn" onClick={() => removeItem(item.id)}>
+          Delete
         </button>
       </div>
     </li>

@@ -71,6 +71,10 @@ function App() {
   };
   console.log("isPopupVisible", isPopupVisible);
 
+  const removeItem = (itemId) => {
+    setCartItems(cartItems.filter((item) => item.id !== itemId)); // Loại bỏ sản phẩm dựa trên ID
+  };
+
   return (
     <div>
       <div className="wrapper-header">
@@ -83,6 +87,8 @@ function App() {
             cartItems={cartItems}
             updateQuantity={updateQuantity}
             togglePopup={togglePopup}
+            removeItem={removeItem} 
+            setCartItems={setCartItems} 
           />
         )}
       </div>
