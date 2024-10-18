@@ -3,13 +3,17 @@ import { useUserContext } from "./UserContext";
 import LoginPopup from "./LoginPopup";
 
 const Header = ({ cartCount, togglePopup }) => {
-  const { user } = useUserContext(); // Access user information from context
+  const { user, setUser } = useUserContext();
   const [isLoginPopupOpen, setLoginPopupOpen] = useState(false);
 
   console.log("user: ", user);
 
   const handleUserIconClick = () => {
-    setLoginPopupOpen(true); // Open login popup when the user icon is clicked
+    setLoginPopupOpen(true);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
   };
 
   return (
@@ -56,11 +60,23 @@ const Header = ({ cartCount, togglePopup }) => {
               </li>
             </ul>
             <div className="user_option">
-              <div className="user_link" onClick={handleUserIconClick}>
-                <div style={{ marginRight: 10 }}>
-                  <i className="fa fa-user" style={{ cursor: "pointer" }}></i>
+              {user ? (
+                <div className="user_link" onClick={handleLogout}>
+                  <div style={{ marginRight: 10 }}>
+                    <i
+                      className="fa-solid fa-right-from-bracket"
+                      style={{ cursor: "pointer" }}
+                    ></i>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="user_link" onClick={handleUserIconClick}>
+                  <div style={{ marginRight: 10 }}>
+                    <i className="fa fa-user" style={{ cursor: "pointer" }}></i>
+                  </div>
+                </div>
+              )}
+
               <div className="cart_link" onClick={togglePopup}>
                 <div>
                   <i
@@ -81,10 +97,6 @@ const Header = ({ cartCount, togglePopup }) => {
                   <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              {/* <a href="" className="order_online">
-                {" "}
-                Order Online{" "}
-              </a> */}
               {/* Display user's information if logged in, else show login */}
               {user ? (
                 <span style={{ color: "white" }} className="welcome-text">
